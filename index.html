@@ -396,27 +396,30 @@
   /* ───────── PHOTO GALLERY ───────── */
   .gallery {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 14px;
-    margin-top: 40px;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 18px;
+    margin-top: 56px;
   }
   .photo {
+    grid-column: span 2;
     position: relative;
-    aspect-ratio: 4 / 5;
-    border-radius: 16px;
+    aspect-ratio: 1 / 1;
+    border-radius: 18px;
     overflow: hidden;
     background: var(--cream);
     border: 1px solid var(--rule);
-    box-shadow: 0 12px 24px -16px rgba(60, 30, 10, 0.25);
+    box-shadow: 0 14px 28px -16px rgba(60, 30, 10, 0.28);
     cursor: default;
     transition: transform 320ms cubic-bezier(.2,.8,.2,1),
                 box-shadow 320ms ease;
   }
-  .photo:nth-child(odd)  { transform: rotate(-1deg); }
-  .photo:nth-child(even) { transform: rotate(1.2deg); }
+  .photo:nth-child(4) { grid-column: 2 / span 2; }
+  .photo:nth-child(5) { grid-column: 4 / span 2; }
+  .photo:nth-child(odd)  { transform: rotate(-0.8deg); }
+  .photo:nth-child(even) { transform: rotate(1deg); }
   .photo:hover {
-    transform: rotate(0deg) translateY(-4px) scale(1.02);
-    box-shadow: 0 22px 40px -18px rgba(60, 30, 10, 0.35);
+    transform: rotate(0deg) translateY(-4px) scale(1.015);
+    box-shadow: 0 24px 44px -18px rgba(60, 30, 10, 0.38);
     z-index: 2;
   }
   .photo img {
@@ -424,23 +427,25 @@
     height: 100%;
     object-fit: cover;
     display: block;
-    transition: transform 600ms ease;
+    transition: transform 700ms ease;
   }
-  .photo:hover img { transform: scale(1.06); }
+  .photo:hover img { transform: scale(1.05); }
   .photo .caption {
     position: absolute;
     inset: 0;
-    padding: 18px 18px;
+    padding: 26px 26px 24px;
     display: flex;
     align-items: flex-end;
     background: linear-gradient(
       180deg,
-      rgba(29, 26, 23, 0) 35%,
-      rgba(29, 26, 23, 0.72) 70%,
-      rgba(29, 26, 23, 0.92) 100%
+      rgba(29, 26, 23, 0) 25%,
+      rgba(29, 26, 23, 0.78) 60%,
+      rgba(29, 26, 23, 0.94) 100%
     );
     color: var(--cream);
-    font-size: 0.82rem;
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: 1rem;
     line-height: 1.45;
     opacity: 0;
     transition: opacity 320ms ease;
@@ -451,8 +456,6 @@
   }
   .photo .caption span {
     display: block;
-    max-height: 100%;
-    overflow: auto;
   }
 
   /* ───────── CTA ───────── */
@@ -535,10 +538,10 @@
     main { padding: 36px 22px 80px; }
     .cta { padding: 40px 28px; }
     .gallery { grid-template-columns: repeat(2, 1fr); gap: 12px; }
-    .photo .caption { opacity: 1; font-size: 0.78rem; padding: 14px; }
-  }
-  @media (min-width: 881px) and (max-width: 1080px) {
-    .gallery { grid-template-columns: repeat(3, 1fr); }
+    .photo,
+    .photo:nth-child(4),
+    .photo:nth-child(5) { grid-column: span 1; }
+    .photo .caption { opacity: 1; font-size: 0.88rem; padding: 16px; }
   }
 </style>
 </head>
@@ -688,23 +691,23 @@
     <div class="gallery" aria-label="Photos from off the clock">
       <figure class="photo" tabindex="0">
         <img src="photos/patagonia.jpg" alt="Patagonia W Trek" loading="lazy" />
-        <figcaption class="caption"><span>The Patagonia W Trek was incredibly beautiful and life changing — solo adventures let me reflect on the world and myself, and I made friendships along the way (one couple even asked me to film their engagement at the top of a hike!).</span></figcaption>
+        <figcaption class="caption"><span>The W Trek in Patagonia — life-changing. Solo travel always lets me reflect on the world and myself, and I came home with new friendships, including a couple who asked me to film their engagement at the top of a hike.</span></figcaption>
       </figure>
       <figure class="photo" tabindex="0">
         <img src="photos/marathon.jpg" alt="Sugarloaf Marathon" loading="lazy" />
-        <figcaption class="caption"><span>The Sugarloaf Marathon was my first marathon! It included many hills to conquer and the support of friends &amp; family and the true crime podcast that I was listening to kept me going.</span></figcaption>
+        <figcaption class="caption"><span>My first marathon — Sugarloaf. Plenty of hills to conquer, propelled by the support of friends and family along the course, and a true crime podcast in my ears.</span></figcaption>
       </figure>
       <figure class="photo" tabindex="0">
         <img src="photos/hike.jpg" alt="Enchantments thru-hike" loading="lazy" />
-        <figcaption class="caption"><span>The Pacific Northwest is stunning — I learned something new about myself: when luck doesn't work out, I take matters into my own hands and make things happen (this was the Enchantments hike — the lottery for camping is extremely difficult to get given the sheer number of people who want to do this hike, so I thru-hiked it).</span></figcaption>
+        <figcaption class="caption"><span>The Enchantments, in the Pacific Northwest. The camping lottery is famously brutal, so I thru-hiked it in a single day — a reminder that when luck doesn't break my way, I make things happen.</span></figcaption>
       </figure>
       <figure class="photo" tabindex="0">
         <img src="photos/bike.jpg" alt="Pan-Mass Challenge" loading="lazy" />
-        <figcaption class="caption"><span>The Pan-Mass Challenge, a fundraiser for cancer research, propelled me into my love for biking! I'm now an avid road biker, and can be often found biking in Boston on one of several of my favorite routes, all of which inevitably end at a bakery.</span></figcaption>
+        <figcaption class="caption"><span>The Pan-Mass Challenge, a fundraiser for cancer research, sparked my love for biking. Now an avid road cyclist around Boston — most of my favorite routes inevitably end at a bakery.</span></figcaption>
       </figure>
       <figure class="photo" tabindex="0">
         <img src="photos/snowboard.jpg" alt="Snowboarding" loading="lazy" />
-        <figcaption class="caption"><span>Snowboarding has been a huge passion of mine, blending an activity with the beauty of mountains. The thrill and adrenaline of going down a mountain, chasing powder, or navigating the obstacle course of trees is what keeps me coming back each year.</span></figcaption>
+        <figcaption class="caption"><span>Snowboarding pairs adrenaline with the beauty of mountains. Chasing powder, threading trees, the thrill of going down — it's what keeps me coming back every winter.</span></figcaption>
       </figure>
     </div>
   </section>
