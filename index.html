@@ -347,7 +347,7 @@
     display: grid;
     grid-template-columns: 1.05fr 0.95fr;
     gap: 48px;
-    align-items: start;
+    align-items: center;
   }
   .chips {
     display: flex; flex-wrap: wrap; gap: 10px;
@@ -433,20 +433,21 @@
   .photo .caption {
     position: absolute;
     inset: 0;
-    padding: 26px 26px 24px;
+    padding: 20px 20px 18px;
     display: flex;
     align-items: flex-end;
     background: linear-gradient(
       180deg,
-      rgba(29, 26, 23, 0) 25%,
-      rgba(29, 26, 23, 0.78) 60%,
-      rgba(29, 26, 23, 0.94) 100%
+      rgba(29, 26, 23, 0.05) 0%,
+      rgba(29, 26, 23, 0.55) 35%,
+      rgba(29, 26, 23, 0.86) 70%,
+      rgba(29, 26, 23, 0.96) 100%
     );
     color: var(--cream);
-    font-family: var(--serif);
+    font-family: var(--sans);
     font-weight: 400;
-    font-size: 1rem;
-    line-height: 1.45;
+    font-size: clamp(0.78rem, 0.55vw + 0.62rem, 0.95rem);
+    line-height: 1.4;
     opacity: 0;
     transition: opacity 320ms ease;
   }
@@ -529,19 +530,62 @@
 
   /* ───────── RESPONSIVE ───────── */
   @media (max-width: 880px) {
-    .hero { grid-template-columns: 1fr; gap: 40px; }
-    .portrait { max-width: 360px; margin: 0 auto; width: 100%; }
-    .now-grid { grid-template-columns: 1fr; }
-    .off { grid-template-columns: 1fr; gap: 32px; }
-    .roles li { grid-template-columns: 1fr; gap: 4px; }
+    body { font-size: 16px; }
+    main { padding: 32px 20px 72px; }
+    section { margin-top: 72px; }
+    .hero { grid-template-columns: 1fr; gap: 36px; padding: 16px 0 48px; }
+    .portrait { max-width: 320px; margin: 0 auto; width: 100%; }
+    .portrait .frame { border-radius: 110px 110px 20px 20px; }
+    h1.display { font-size: clamp(2.8rem, 13vw, 4rem); }
+    .lede { font-size: 1.05rem; }
+    .now-grid { grid-template-columns: 1fr; gap: 12px; }
+    .now-card { padding: 18px 20px; }
+    .off { grid-template-columns: 1fr; gap: 28px; }
+    .roles li { grid-template-columns: 1fr; gap: 6px; padding: 18px 0; }
+    .roles li:hover { padding-left: 0; }
     .roles .arrow { display: none; }
-    main { padding: 36px 22px 80px; }
-    .cta { padding: 40px 28px; }
-    .gallery { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+    .roles .role { font-size: 1.15rem; }
+    .roles .when { font-size: 0.78rem; }
+    .edu-card { padding: 20px 22px; gap: 18px; }
+    .edu-card .crest { width: 44px; height: 44px; font-size: 1.1rem; }
+    .pull-quote { font-size: 1.2rem; padding-left: 18px; }
+    .cta { margin-top: 80px; padding: 36px 24px; border-radius: 24px; }
+    .cta::after { font-size: 9rem; bottom: -30px; right: -8px; }
+    footer { margin-top: 56px; }
+
+    /* Gallery: 2-up, 5th photo centered alone */
+    .gallery {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin-top: 36px;
+    }
     .photo,
     .photo:nth-child(4),
     .photo:nth-child(5) { grid-column: span 1; }
-    .photo .caption { opacity: 1; font-size: 0.88rem; padding: 16px; }
+    .photo:last-child { grid-column: 1 / -1; max-width: 70%; justify-self: center; }
+    .photo .caption {
+      opacity: 1;
+      font-size: 0.85rem;
+      padding: 14px 16px;
+    }
+  }
+  @media (max-width: 480px) {
+    main { padding: 24px 16px 64px; }
+    section { margin-top: 56px; }
+    h1.display { font-size: clamp(2.4rem, 14vw, 3.4rem); }
+    h2.section-h { font-size: clamp(1.6rem, 7.5vw, 2rem); }
+    .hero-eyebrow { font-size: 1.4rem; }
+    .lede { font-size: 1rem; }
+    .hero-meta { font-size: 0.85rem; gap: 10px; }
+    .label { font-size: 0.7rem; margin-bottom: 18px; }
+    .label::before { width: 18px; }
+    .now-card .v { font-size: 1.05rem; }
+    .chips li { font-size: 0.88rem; padding: 6px 13px; }
+    .pull-quote { font-size: 1.1rem; }
+    .gallery { gap: 10px; margin-top: 28px; }
+    .photo:last-child { max-width: 85%; }
+    .photo .caption { font-size: 0.8rem; padding: 12px 14px; }
+    .links a { padding: 11px 18px; font-size: 0.92rem; }
   }
 </style>
 </head>
@@ -691,7 +735,7 @@
     <div class="gallery" aria-label="Photos from off the clock">
       <figure class="photo" tabindex="0">
         <img src="photos/patagonia.jpg" alt="Patagonia W Trek" loading="lazy" />
-        <figcaption class="caption"><span>The W Trek in Patagonia — life-changing. Solo travel always lets me reflect on the world and myself, and I came home with new friendships, including a couple who asked me to film their engagement at the top of a hike.</span></figcaption>
+        <figcaption class="caption"><span>The W Trek in Patagonia — life-changing. Solo trips let me reflect, and I came home with new friendships, including a couple I helped by filming their engagement on a summit.</span></figcaption>
       </figure>
       <figure class="photo" tabindex="0">
         <img src="photos/marathon.jpg" alt="Sugarloaf Marathon" loading="lazy" />
