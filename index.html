@@ -262,6 +262,14 @@
   }
 
   /* ───────── EXPERIENCE ───────── */
+  .exp-intro {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 1.15rem;
+    color: var(--ink-soft);
+    max-width: 38em;
+    margin: -10px 0 22px;
+  }
   .roles { list-style: none; padding: 0; margin: 0; }
   .roles li {
     display: grid;
@@ -459,6 +467,34 @@
     display: block;
   }
 
+  /* ───────── AI NOTE ───────── */
+  .ai-note {
+    margin-top: 96px;
+    max-width: 38em;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    padding: 32px 32px 30px;
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+  }
+  .ai-note .ps {
+    display: block;
+    font-family: var(--hand);
+    color: var(--terracotta);
+    font-size: 1.5rem;
+    margin-bottom: 6px;
+    transform: rotate(-2deg);
+  }
+  .ai-note p {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 1.1rem;
+    line-height: 1.55;
+    color: var(--ink);
+    margin: 0;
+  }
+
   /* ───────── CTA ───────── */
   .cta {
     margin-top: 120px;
@@ -549,6 +585,9 @@
     .edu-card { padding: 20px 22px; gap: 18px; }
     .edu-card .crest { width: 44px; height: 44px; font-size: 1.1rem; }
     .pull-quote { font-size: 1.2rem; padding-left: 18px; }
+    .exp-intro { font-size: 1.02rem; margin: 0 0 18px; }
+    .ai-note { margin-top: 72px; padding: 24px 22px; }
+    .ai-note p { font-size: 1rem; }
     .cta { margin-top: 80px; padding: 36px 24px; border-radius: 24px; }
     .cta::after { font-size: 9rem; bottom: -30px; right: -8px; }
     footer { margin-top: 56px; }
@@ -602,7 +641,8 @@
       <p class="lede">
         <strong>Strategy &amp; Operations Manager at Thumbtack.</strong>
         Ex-consultant, Harvard Economics &amp; Computer Science.
-        I like turning ambiguous problems into things that actually ship —
+        Analytical, collaborative, scrappy, open-minded —
+        I like turning ambiguous problems into things that actually ship,
         and most weekends, I'm somewhere between a long run and a sourdough loaf.
       </p>
       <div class="hero-meta">
@@ -645,6 +685,7 @@
   <section id="experience">
     <div class="label">Where I've been</div>
     <h2 class="section-h">Strategy work, mostly at the <em>messy edges</em>.</h2>
+    <p class="exp-intro">Ask thoughtful questions, build trust across functions, ship something useful before perfect.</p>
     <ul class="roles">
       <li>
         <span class="when">2025 — now</span>
@@ -754,6 +795,12 @@
         <figcaption class="caption"><span>Snowbird, Utah: adrenaline meets mountains. Chasing powder, threading trees, the thrill of going down a slope. It's what keeps me coming back every winter.</span></figcaption>
       </figure>
     </div>
+  </section>
+
+  <!-- AI NOTE -->
+  <section class="ai-note">
+    <span class="ps">P.S.</span>
+    <p>I'm adept at leveraging AI to move faster (yes, this site was vibe-coded) — but I keep its role tightly scoped: a force multiplier for my efficiency, not a replacement for the critical thinking I want to keep sharp.</p>
   </section>
 
   <!-- CTA -->
