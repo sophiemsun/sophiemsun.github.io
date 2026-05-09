@@ -438,6 +438,8 @@
     transition: transform 700ms ease;
   }
   .photo:hover img { transform: scale(1.05); }
+  .photo--zoom img { transform: scale(1.5); transform-origin: center center; }
+  .photo--zoom:hover img { transform: scale(1.55); }
   .photo .caption {
     position: absolute;
     inset: 0;
@@ -778,7 +780,7 @@
         <img src="photos/patagonia.jpg" alt="Patagonia W Trek" loading="lazy" />
         <figcaption class="caption"><span>The W Trek, Patagonia: life-changing. Solo trips let me reflect on the world and myself. I came home with new friendships, including a couple I helped by filming their engagement on a summit.</span></figcaption>
       </figure>
-      <figure class="photo" tabindex="0">
+      <figure class="photo photo--zoom" tabindex="0">
         <img src="photos/marathon.jpg" alt="Sugarloaf Marathon" loading="lazy" />
         <figcaption class="caption"><span>Sugarloaf Marathon: my first 26.2. Hills upon hills to conquer, propelled by friends and family on the course. A true crime podcast did the rest.</span></figcaption>
       </figure>
